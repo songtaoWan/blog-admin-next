@@ -5,7 +5,7 @@ export const useSettingStore = defineStore('setting', () => {
   /**
    * 网站主题
    */
-  const theme = ref<'light' | 'dark'>('dark')
+  const theme = ref<'light' | 'dark'>('light')
   function toggleTheme() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
   }
@@ -13,7 +13,7 @@ export const useSettingStore = defineStore('setting', () => {
   /**
    * 侧边栏是否折叠
    */
-  const collapsed = ref(true)
+  const collapsed = ref(false)
   function toggleCollapsed() {
     collapsed.value = !collapsed.value
   }
