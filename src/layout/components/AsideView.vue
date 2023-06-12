@@ -9,8 +9,10 @@ import {
   AppstoreOutlined
 } from '@ant-design/icons-vue'
 import { useSettingStore } from '@/stores/setting'
+import { storeToRefs } from 'pinia'
 
-const { theme, collapsed } = useSettingStore()
+const setStore = useSettingStore()
+const { theme, collapsed } = storeToRefs(setStore)
 
 const state = reactive<{ selectedKeys: string[]; openKeys: string[]; preOpenKeys: string[] }>({
   selectedKeys: ['1'],
@@ -101,7 +103,7 @@ watch(
 </script>
 
 <template>
-  <aside class="layout_aside">
+  <aside class="layout_aside" :class="collapsed ? 'w-80' : ''">
     <a-menu
       v-model:openKeys="state.openKeys"
       v-model:selectedKeys="state.selectedKeys"
@@ -115,13 +117,18 @@ watch(
 
 <style lang="scss" scoped>
 .layout_aside {
-  flex-shrink: 0;
   overflow-y: auto;
-  width: 256px;
+  width: 220px;
   height: 100vh;
+  transition: width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.w-80 {
+  width: 80px;
 }
 
 :deep(.ant-menu) {
