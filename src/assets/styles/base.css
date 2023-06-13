@@ -6,3 +6,11 @@ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, tex
 img {
   display: block;
 }
+
+.light {
+  --bg-top-menuColor: #606266;
+}
+
+.dark {
+  --bg-top-menuColor: #dadada;
+}
