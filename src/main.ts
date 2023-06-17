@@ -1,4 +1,5 @@
 import '@/assets/styles/base.css'
+import '@/assets/styles/reset-menu.css'
 import 'tailwindcss/tailwind.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
