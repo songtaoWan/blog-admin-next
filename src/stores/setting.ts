@@ -8,6 +8,8 @@ export const useSettingStore = defineStore('setting', () => {
   const theme = ref<'light' | 'dark'>('light')
   function toggleTheme() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
+
+    document.body.className = theme.value
   }
 
   /**
