@@ -1,4 +1,26 @@
-html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -8,22 +30,31 @@ img {
 }
 
 :root {
-  --vt-c-white: #fff;
-  --vt-c-black: #1a1a1a;
-  --vt-c-gray: #8e8e8e;
-  --vt-c-text-1: rgba(255, 255, 255, .85);
-  --vt-c-text-2: rgba(60, 60, 60, .7);
-  --vt-shadow-1: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-}
+  --st-c-white: #fff;
+  --st-c-black: #1a1a1a;
+  --st-c-gray: #8e8e8e;
+  --st-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
 
-.light {
-  --bg-top-menuColor: #606266;
-  --vt-c-bg-mute: #f1f1f1;
-  --vt-c-divider: rgba(60, 60, 60, .29);
+  /* light theme */
+  --st-c-icon: #606266;
+  --st-c-bg-mute: #f1f1f1;
+  --st-c-divider: rgba(60, 60, 60, 0.29);
+  --st-c-text-1: #213547;
+  --st-c-text-2: rgba(60, 60, 60, 0.7);
+  --st-c-bg: #fff;
+  --st-c-menu-checked: #e6f4ff;
+  --st-c-menu-active: #f0f0f0;
+  --st-c-menu-bg: rgba(0, 0, 0, 0.02);
 }
 
 .dark {
-  --bg-top-menuColor: #dadada;
-  --vt-c-bg-mute: #2f2f2f;
-  --vt-c-divider: rgba(84, 84, 84, .65);
+  --st-c-icon: #dadada;
+  --st-c-bg-mute: #2f2f2f;
+  --st-c-divider: rgba(84, 84, 84, 0.65);
+  --st-c-text-1: rgba(255, 255, 255, 0.87);
+  --st-c-text-2: rgba(235, 235, 235, 0.6);
+  --st-c-bg: #1a1a1a;
+  --st-c-menu-checked: #111a2c;
+  --st-c-menu-active: #313131;
+  --st-c-menu-bg: rgba(255, 255, 255, 0.04);
 }
