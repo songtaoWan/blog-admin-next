@@ -16,8 +16,6 @@ import HeaderView from './components/HeaderView.vue'
 <style lang="scss" scoped>
 .layout {
   height: 100vh;
-  background-color: var(--st-c-bg);
-  transition: background-color 0.25s;
 }
 
 .layout_container {

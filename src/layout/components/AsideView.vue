@@ -133,11 +133,7 @@ watch(
 
 :deep(.ant-menu) {
   height: 100%;
-}
-
-:deep(.ant-menu-light) {
-  color: var(--st-c-text-1);
-  background-color: var(--st-c-bg);
+  transition: background 0.5s,width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
 :deep(.ant-menu-light.ant-menu-root.ant-menu-inline) {
