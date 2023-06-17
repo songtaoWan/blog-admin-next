@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-import AsideView from './components/AsideView.vue';
+import AsideView from './components/AsideView.vue'
+import HeaderView from './components/HeaderView.vue'
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout flex">
     <AsideView />
     <div class="layout_container">
+      <HeaderView />
       <router-view />
     </div>
   </div>
@@ -13,6 +15,12 @@ import AsideView from './components/AsideView.vue';
 
 <style lang="scss" scoped>
 .layout {
-  display: flex;
+  height: 100vh;
+  background-color: var(--st-c-bg);
+  transition: background-color 0.25s;
+}
+
+.layout_container {
+  flex: 1;
 }
 </style>

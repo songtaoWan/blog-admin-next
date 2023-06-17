@@ -32,12 +32,12 @@ const { theme } = storeToRefs(setStore)
   width: 40px;
   height: 22px;
   flex-shrink: 0;
-  border: 1px solid var(--vt-c-divider);
-  background-color: var(--vt-c-bg-mute);
+  border: 1px solid var(--st-c-divider);
+  background-color: var(--st-c-bg-mute);
   transition: border-color 0.25s, background-color 0.25s;
 
   &:hover {
-    border-color: var(--vt-c-gray);
+    border-color: var(--st-c-gray);
   }
 
   .switch-check {
@@ -49,17 +49,15 @@ const { theme } = storeToRefs(setStore)
     left: 1px;
     width: 18px;
     height: 18px;
-    color: var(--vt-c-text-2);
+    color: var(--st-c-text-1);
     border-radius: 50%;
-    background-color: var(--vt-c-white);
-    box-shadow: var(--vt-shadow-1);
+    background-color: var(--st-c-bg);
+    box-shadow: var(--st-shadow-1);
     transition: all 0.25s;
   }
 
   .switch-check--active {
     transform: translateX(18px);
-    color: var(--vt-c-text-1);
-    background-color: var(--vt-c-black);
   }
 
   .vt-switch-icon {

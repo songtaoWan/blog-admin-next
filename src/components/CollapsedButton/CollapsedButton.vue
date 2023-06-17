@@ -24,6 +24,6 @@ const { collapsed } = storeToRefs(setStore)
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: var(--bg-top-menuColor);
+  color: var(--st-c-icon);
 }
 </style>

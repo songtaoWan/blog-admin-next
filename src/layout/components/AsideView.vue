@@ -12,7 +12,7 @@ import { useSettingStore } from '@/stores/setting'
 import { storeToRefs } from 'pinia'
 
 const setStore = useSettingStore()
-const { theme, collapsed } = storeToRefs(setStore)
+const { collapsed } = storeToRefs(setStore)
 
 const state = reactive<{ selectedKeys: string[]; openKeys: string[]; preOpenKeys: string[] }>({
   selectedKeys: ['1'],
@@ -108,7 +108,6 @@ watch(
       v-model:openKeys="state.openKeys"
       v-model:selectedKeys="state.selectedKeys"
       mode="inline"
-      :theme="theme"
       :inline-collapsed="collapsed"
       :items="items"
     ></a-menu>
@@ -120,6 +119,7 @@ watch(
   overflow-y: auto;
   width: 220px;
   height: 100vh;
+  border-right: 1px solid var(--st-c-divider);
   transition: width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
 
   &::-webkit-scrollbar {
@@ -133,5 +133,58 @@ watch(
 
 :deep(.ant-menu) {
   height: 100%;
+}
+
+:deep(.ant-menu-light) {
+  color: var(--st-c-text-1);
+  background-color: var(--st-c-bg);
+}
+
+:deep(.ant-menu-light.ant-menu-root.ant-menu-inline) {
+  border-inline-end: none;
+}
+
+:deep(.ant-menu-light .ant-menu-item-selected) {
+  background-color: var(--st-c-menu-checked);
+}
+
+:deep(
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal)
+      .ant-menu-item:not(.ant-menu-item-selected):hover
+  ) {
+  background-color: var(--st-c-menu-active);
+}
+
+:deep(
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal)
+      .ant-menu-submenu-title:hover
+  ) {
+  background-color: var(--st-c-menu-active);
+  color: var(--st-c-text-1);
+}
+
+:deep(
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+      .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+      .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
+  ) {
+  color: none;
+}
+
+:deep(
+    .ant-menu-light
+      .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+      .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
+  ) {
+  color: var(--st-c-text-1);
+}
+
+:deep(
+    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light.ant-menu-inline
+      .ant-menu-sub.ant-menu-inline
+  ) {
+  background: var(--st-c-menu-bg);
 }
 </style>
