@@ -10,11 +10,10 @@ const { theme } = storeToRefs(setStore)
 </script>
 
 <template>
-  <button class="switch-appearence">
+  <button class="switch-appearence" @click="toggleTheme">
     <span
       class="switch-check"
       :class="theme === 'dark' ? 'switch-check--active' : ''"
-      @click="toggleTheme"
     >
       <span class="switch-icon">
         <IconSun v-show="theme === 'light'" />
