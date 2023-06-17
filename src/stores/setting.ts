@@ -1,15 +1,16 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { getTheme, setTheme } from '@/utils/theme'
 
 export const useSettingStore = defineStore('setting', () => {
   /**
    * 网站主题
    */
-  const theme = ref<'light' | 'dark'>('light')
+  const theme = ref(getTheme())
   function toggleTheme() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
 
-    document.body.className = theme.value
+    setTheme(theme.value)
   }
 
   /**
