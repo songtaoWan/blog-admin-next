@@ -45,7 +45,7 @@ img {
 .light {
   --st-c-icon: #606266;
   --st-c-bg-mute: #f1f1f1;
-  --st-c-divider: rgba(60, 60, 60, 0.29);
+  --st-c-divider: rgba(60, 60, 60, 0.1);
   --st-c-text-1: #213547;
   --st-c-text-2: rgba(60, 60, 60, 0.7);
   --st-c-bg: #fff;
