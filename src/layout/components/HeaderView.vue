@@ -2,6 +2,7 @@
 import CollapsedButton from '@/components/CollapsedButton/CollapsedButton.vue';
 import ScreenFull from '@/components/ScreenFull/ScreenFull.vue';
 import SwitchAppearance from '@/components/SwitchAppearance/SwitchAppearance.vue';
+import HeaderAvatar from './HeaderAvatar.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import SwitchAppearance from '@/components/SwitchAppearance/SwitchAppearance.vue
     <div class="flex">
       <ScreenFull />
       <SwitchAppearance />
+      <HeaderAvatar />
     </div>
   </header>
 </template>
