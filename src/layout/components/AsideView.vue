@@ -183,4 +183,8 @@ watch(
   ) {
   background: var(--st-c-menu-bg);
 }
+
+:deep(:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light.ant-menu-root.ant-menu-vertical) {
+  border-inline-end: none;
+}
 </style>
