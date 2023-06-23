@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import CollapsedButton from '@/components/CollapsedButton/CollapsedButton.vue';
+import ButtonCollapsed from '@/components/ButtonCollapsed/ButtonCollapsed.vue';
 import ScreenFull from '@/components/ScreenFull/ScreenFull.vue';
 import SwitchAppearance from '@/components/SwitchAppearance/SwitchAppearance.vue';
 import HeaderAvatar from './HeaderAvatar.vue';
@@ -8,7 +8,7 @@ import HeaderAvatar from './HeaderAvatar.vue';
 <template>
   <header class="header flex">
     <div class="flex">
-      <CollapsedButton />
+      <ButtonCollapsed />
     </div>
     <div class="flex">
       <ScreenFull />
