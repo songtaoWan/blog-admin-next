@@ -12,17 +12,15 @@ const { collapsed } = storeToRefs(setStore)
 </script>
 
 <template>
-  <div class="collapsed px-5">
-    <menu-fold-outlined v-show="!collapsed" @click="toggleCollapsed" />
-    <menu-unfold-outlined v-show="collapsed" @click="toggleCollapsed" />
+  <div class="collapsed mx-3 p-2 flex items-center" @click="toggleCollapsed">
+    <menu-fold-outlined v-show="!collapsed" />
+    <menu-unfold-outlined v-show="collapsed" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .collapsed {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
   font-size: 16px;
   color: var(--st-c-icon);
 }
