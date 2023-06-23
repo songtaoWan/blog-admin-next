@@ -1,30 +1,30 @@
 /* 重置ant-design菜单组件在收缩模式下的子菜单样式 */
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light {
+.ant-menu-light {
   color: var(--st-c-text-1);
   background: none;
 }
 
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light.ant-menu-submenu > .ant-menu {
+.ant-menu-light.ant-menu-submenu > .ant-menu {
   background-color: var(--st-c-menu-bg);
 }
 
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal)
+.ant-menu-light:not(.ant-menu-horizontal)
   .ant-menu-item:not(.ant-menu-item-selected):hover {
   background-color: var(--st-c-menu-active);
 }
 
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+.ant-menu-light
   .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+.ant-menu-light
   .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected) {
   color: var(--st-c-text-1);
 }
 
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light .ant-menu-item-selected {
+.ant-menu-light .ant-menu-item-selected {
   background-color: var(--st-c-menu-checked);
 }
 
-:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover {
+.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover {
   background-color: var(--st-c-menu-active);
 }
 
@@ -32,16 +32,16 @@
 .ant-dropdown {
   min-width: auto !important;
 }
-:where(.css-dev-only-do-not-override-j6gjt1).ant-dropdown .ant-dropdown-menu {
+.ant-dropdown .ant-dropdown-menu {
   background-color: var(--st-c-bg);
   box-shadow: var(--st-shadow);
 }
-:where(.css-dev-only-do-not-override-j6gjt1).ant-dropdown .ant-dropdown-arrow::before {
+.ant-dropdown .ant-dropdown-arrow::before {
   background-color: var(--st-c-bg);
 }
-:where(.css-dev-only-do-not-override-j6gjt1).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
   color: var(--st-c-text-1);
 }
-:where(.css-dev-only-do-not-override-j6gjt1).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover {
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover {
   background-color: var(--st-c-menu-active);
 }
