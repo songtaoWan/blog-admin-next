@@ -23,6 +23,7 @@ defineProps<{
 
 <style lang="scss" scoped>
 .v-tag {
+  flex-shrink: 0;
   font-size: 12px;
   color: var(--st-c-text-2);
   background-color: var(--st-c-bg);
