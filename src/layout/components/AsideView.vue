@@ -133,7 +133,7 @@ watch(
 
 :deep(.ant-menu) {
   height: 100%;
-  transition: background 0.5s,width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
+  transition: background 0.5s, width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
 :deep(.ant-menu-light.ant-menu-root.ant-menu-inline) {
@@ -144,25 +144,19 @@ watch(
   background-color: var(--st-c-menu-checked);
 }
 
-:deep(
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal)
-      .ant-menu-item:not(.ant-menu-item-selected):hover
-  ) {
+:deep(.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover) {
   background-color: var(--st-c-menu-active);
 }
 
-:deep(
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light:not(.ant-menu-horizontal)
-      .ant-menu-submenu-title:hover
-  ) {
+:deep(.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-submenu-title:hover) {
   background-color: var(--st-c-menu-active);
   color: var(--st-c-text-1);
 }
 
 :deep(
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+    .ant-menu-light
       .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+    .ant-menu-light
       .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
   ) {
   color: none;
@@ -171,20 +165,17 @@ watch(
 :deep(
     .ant-menu-light
       .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light
+    .ant-menu-light
       .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected)
   ) {
   color: var(--st-c-text-1);
 }
 
-:deep(
-    :where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light.ant-menu-inline
-      .ant-menu-sub.ant-menu-inline
-  ) {
+:deep(.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline) {
   background: var(--st-c-menu-bg);
 }
 
-:deep(:where(.css-dev-only-do-not-override-j6gjt1).ant-menu-light.ant-menu-root.ant-menu-vertical) {
+:deep(.ant-menu-light.ant-menu-root.ant-menu-vertical) {
   border-inline-end: none;
 }
 </style>
