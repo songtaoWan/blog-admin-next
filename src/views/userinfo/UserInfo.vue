@@ -3,8 +3,9 @@
 </script>
 
 <template>
-  <div>index</div>
+  <div>个人中心</div>
 </template>
 
-<style lang="scss" scoped> 
+<style lang="scss" scoped>
+
 </style>

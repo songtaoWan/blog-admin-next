@@ -3,8 +3,9 @@
 </script>
 
 <template>
-  <div>index</div>
+  <div>article list</div>
 </template>
 
-<style lang="scss" scoped> 
+<style lang="scss" scoped>
+
 </style>
