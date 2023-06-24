@@ -11,8 +11,8 @@ defineProps<{
     <div class="v-tag-icon">
       <div class="v-tag-left v-tag-box"></div>
     </div>
-    <div class="v-tag-inner">
-      <div><router-link :to="path">{{ title }}</router-link></div>
+    <div class="v-tag-inner" @click="$router.push(path)">
+      {{ title }}
       <slot />
     </div>
     <div class="v-tag-icon">
@@ -27,8 +27,7 @@ defineProps<{
   font-size: 12px;
   color: var(--st-c-text-2);
   background-color: var(--st-c-bg);
-  cursor: pointer;
-  transition: background .5s, color .5s;
+  transition: background 0.5s, color 0.5s;
 
   &:hover {
     .v-tag-icon {
@@ -48,7 +47,7 @@ defineProps<{
       width: 100%;
       height: 100%;
       background-color: var(--st-c-bg);
-      transition: background .5s;
+      transition: background 0.5s;
     }
   }
 
@@ -67,6 +66,7 @@ defineProps<{
     padding: 0 15px;
     height: 100%;
     border-radius: 8px 8px 0 0;
+    cursor: pointer;
   }
 }
 
