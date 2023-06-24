@@ -178,4 +178,8 @@ const login = () => {
 .code {
   height: 32px;
 }
+
+:deep(.ant-btn-primary) {
+  background-color: #1677ff;
+}
 </style>
