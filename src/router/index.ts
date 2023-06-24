@@ -8,12 +8,15 @@ const router = createRouter({
   routes: [
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: LoginView
     },
     {
       path: '/',
       component: LayoutView,
+      meta: {
+        title: '首页'
+      },
       children: [
         {
           path: '',
@@ -21,6 +24,14 @@ const router = createRouter({
           component: () => import('@/views/home/HomeView.vue'),
           meta: {
             title: '首页'
+          }
+        },
+        {
+          path: 'userinfo',
+          name: 'UserInfo',
+          component: () => import('@/views/userinfo/UserInfo.vue'),
+          meta: {
+            title: '个人中心'
           }
         }
       ]
