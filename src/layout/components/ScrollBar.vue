@@ -15,7 +15,7 @@ const tags = ref<{ title: string; path: string; checked?: boolean; hiddenIcon?: 
   { title: '首页', path: '/', hiddenIcon: true }
 ])
 watch(
-  () => route.path,
+  () => route.fullPath,
   (path) => {
     tags.value.forEach((item) => {
       item.checked = false
