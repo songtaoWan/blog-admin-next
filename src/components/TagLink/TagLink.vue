@@ -27,7 +27,7 @@ defineProps<{
   font-size: 12px;
   color: var(--st-c-text-2);
   background-color: var(--st-c-bg);
-  transition: background 0.5s, color 0.5s;
+  transition: var(--st-t-bg), var(--st-t-c);
 
   &:hover {
     .v-tag-icon {
@@ -47,7 +47,7 @@ defineProps<{
       width: 100%;
       height: 100%;
       background-color: var(--st-c-bg);
-      transition: background 0.5s;
+      transition: var(--st-t-bg);
     }
   }
 

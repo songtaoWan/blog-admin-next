@@ -120,7 +120,7 @@ watch(
   width: 220px;
   height: 100vh;
   border-right: 1px solid var(--st-c-divider);
-  transition: width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+  transition: width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 
   &::-webkit-scrollbar {
     display: none;
@@ -133,7 +133,7 @@ watch(
 
 :deep(.ant-menu) {
   height: 100%;
-  transition: background 0.5s, width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
+  transition: var(--st-t-bg), width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
 :deep(.ant-menu-light.ant-menu-root.ant-menu-inline) {

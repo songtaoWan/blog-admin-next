@@ -10,7 +10,7 @@ import ScrollBar from './components/ScrollBar.vue'
     <div class="layout_container">
       <HeaderView />
       <ScrollBar />
-      <div class="layout-main">
+      <div class="layout-main st-transition-bg">
         <router-view v-slot="{ Component }">
           <transition name="slide-fade">
             <KeepAlive>
@@ -37,6 +37,7 @@ import ScrollBar from './components/ScrollBar.vue'
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 80px);
+    background-color: var(--st-c-bg-2);
   }
 }
 
