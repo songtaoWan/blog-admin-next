@@ -23,6 +23,7 @@ watch(
 
     const tag = tags.value.find((item) => item.path === path || item.title === route.meta.title)
     if (tag) {
+      tag.path = route.fullPath
       tag.checked = true
       return
     }
@@ -56,21 +57,19 @@ const onClose = (index: number) => {
 <template>
   <div ref="scrollElement" class="scrollbar-wrap" @wheel="onWheel">
     <div class="scrollbar flex">
-      <TagLink
-        v-for="(item, idx) in tags"
-        :key="item.path"
-        :title="item.title"
-        :checked="item.checked"
-        :path="item.path"
-      >
-        <div
-          v-if="!item.hiddenIcon"
-          class="icon--close"
-          @click.stop="onClose(idx)"
+      <TransitionGroup name="tags">
+        <TagLink
+          v-for="(item, idx) in tags"
+          :key="item.path"
+          :title="item.title"
+          :checked="item.checked"
+          :path="item.path"
         >
-          <CloseOutlined />
-        </div>
-      </TagLink>
+          <div v-if="!item.hiddenIcon" class="icon--close" @click.stop="onClose(idx)">
+            <CloseOutlined />
+          </div>
+        </TagLink>
+      </TransitionGroup>
     </div>
   </div>
 </template>
@@ -104,5 +103,24 @@ const onClose = (index: number) => {
       background-color: #79bbff;
     }
   }
+}
+
+
+.tags-move, /* 对移动中的元素应用的过渡 */
+.tags-enter-active,
+.tags-leave-active {
+  transition: all 0.5s ease;
+}
+
+.tags-enter-from,
+.tags-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* 确保将离开的元素从布局流中删除
+  以便能够正确地计算移动的动画。 */
+.tags-leave-active {
+  position: absolute;
 }
 </style>
