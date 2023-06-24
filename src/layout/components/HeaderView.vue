@@ -3,12 +3,14 @@ import ButtonCollapsed from '@/components/ButtonCollapsed/ButtonCollapsed.vue';
 import ScreenFull from '@/components/ScreenFull/ScreenFull.vue';
 import SwitchAppearance from '@/components/SwitchAppearance/SwitchAppearance.vue';
 import HeaderAvatar from './HeaderAvatar.vue';
+import BreadCrumb from './BreadCrumb.vue';
 </script>
 
 <template>
   <header class="header flex">
     <div class="flex">
       <ButtonCollapsed />
+      <BreadCrumb />
     </div>
     <div class="flex">
       <ScreenFull />
