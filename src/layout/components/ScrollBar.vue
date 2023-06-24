@@ -15,13 +15,13 @@ const tags = ref<{ title: string; path: string; checked?: boolean; hiddenIcon?: 
   { title: '首页', path: '/', hiddenIcon: true }
 ])
 watch(
-  () => route.fullPath,
+  () => route.path,
   (path) => {
     tags.value.forEach((item) => {
       item.checked = false
     })
 
-    const tag = tags.value.find((item) => item.path === path)
+    const tag = tags.value.find((item) => item.path === path || item.title === route.meta.title)
     if (tag) {
       tag.checked = true
       return
@@ -30,7 +30,7 @@ watch(
     const title = (route.meta.title as string) || (route.name as string)
     tags.value.push({
       title,
-      path,
+      path: route.fullPath,
       checked: true
     })
   },
