@@ -1,6 +1,11 @@
 # blog-admin-next
 
-个人博客后台管理系统
+后台管理系统：简易模板，主要功能有网站主题切换、侧边菜单栏收缩、网站全屏、面包屑、已访问页面tagViews组件、登录/退出登录。  
+技术栈：Vue3 + Vite4 + TypeScript + ant-design-vue4 + Vue Router4 + Pinia2 + Axios + Sass + ESLint + Prettier + Vitest。
+
+## Example
+![index](./public/index.png)
+![login](./public/login.png)
 
 ## Project Setup
 
@@ -18,16 +23,4 @@ pnpm dev
 
 ```sh
 pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
 ```
