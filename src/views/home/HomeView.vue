@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>index</div>
+  <div class="st-container">index</div>
 </template>
 
 <style lang="scss" scoped> 

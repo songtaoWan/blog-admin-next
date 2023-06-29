@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>article list</div>
+  <div class="st-container">article list</div>
 </template>
 
 <style lang="scss" scoped>
