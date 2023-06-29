@@ -98,6 +98,12 @@ watch(
       return
     }
 
+    router.currentRoute.value.matched.forEach((item) => {
+      if (item.name && !item.meta?.hidden) {
+        state.openKeys.push(item.name as string)
+      }
+    })
+
     state.selectedKeys = [val as string]
   },
   { immediate: true }
