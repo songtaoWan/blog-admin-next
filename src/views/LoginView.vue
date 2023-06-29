@@ -11,8 +11,10 @@ import {
   Col as ACol,
   InputPassword as AInputPassword
 } from 'ant-design-vue'
-import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
+import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import { validateUsername, validatePassword } from '@/utils/validate'
+import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
 
 const loginRules: Record<'username' | 'password' | 'code', Rule[]> = {
   username: [
@@ -44,15 +46,20 @@ const resetForm = () => {
 }
 
 const loginForm = ref({
-  username: '',
-  password: '',
-  code: ''
+  username: 'test1',
+  password: 'a12138',
+  code: '1234'
 })
 
+const userStore = useUserStore()
+const router = useRouter()
 const login = () => {
   loginFormRef.value?.validate().then(() => {
-    console.log(loginForm.value)
-    resetForm()
+    userStore.login(loginForm.value).then(() => {
+      router.push((router.currentRoute.value.query.redirect as string) || '/')
+
+      resetForm()
+    })
   })
 }
 </script>
@@ -74,7 +81,7 @@ const login = () => {
         <div class="login_right_title">账号登录</div>
         <a-form ref="loginFormRef" :model="loginForm" :rules="loginRules" label-width="0px">
           <a-form-item name="username">
-            <a-input v-model="loginForm.username" placeholder="请输入用户名">
+            <a-input v-model:value="loginForm.username" placeholder="请输入用户名">
               <template #prefix>
                 <UserOutlined class="site-form-item-icon" />
               </template>
@@ -91,7 +98,7 @@ const login = () => {
             <a-row>
               <a-col :span="16">
                 <a-form-item name="code">
-                  <a-input v-model="loginForm.code" placeholder="请输入验证码"></a-input>
+                  <a-input v-model:value="loginForm.code" placeholder="请输入验证码"></a-input>
                 </a-form-item>
               </a-col>
               <a-col :span="8">

@@ -1,6 +1,20 @@
 <script lang="ts" setup>
 import { Dropdown as ADropdown, Menu as AMenu, MenuItem as AMenuItem } from 'ant-design-vue'
 import { DownOutlined } from '@ant-design/icons-vue'
+import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
+
+const userStore = useUserStore()
+const router = useRouter()
+const logout = () => {
+  userStore.logout()
+  router.push({
+    path: '/login',
+    query: {
+      redirect: router.currentRoute.value.fullPath
+    }
+  })
+}
 </script>
 
 <template>
@@ -25,7 +39,7 @@ import { DownOutlined } from '@ant-design/icons-vue'
           <a href="javascript:;">个人中心</a>
         </a-menu-item>
         <a-menu-item>
-          <a href="javascript:;">退出登录</a>
+          <a href="javascript:;" @click="logout">退出登录</a>
         </a-menu-item>
       </a-menu>
     </template>

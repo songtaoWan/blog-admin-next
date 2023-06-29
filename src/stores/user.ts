@@ -16,10 +16,26 @@ export const useUserStore = defineStore('user', () => {
     removeStorage('token')
   }
 
+  function login(data: {username: string; password: string; code: string;}) {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        console.log(data)
+
+        setToken('test login')
+        resolve()
+      }, 100)
+    })
+  }
+  function logout() {
+    removeToken()
+  }
+
   return {
     token,
     getToken,
     setToken,
-    removeToken
+    removeToken,
+    login,
+    logout
   }
 })
