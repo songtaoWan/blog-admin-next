@@ -99,7 +99,8 @@ watch(
     }
 
     state.selectedKeys = [val as string]
-  }
+  },
+  { immediate: true }
 )
 </script>
 
