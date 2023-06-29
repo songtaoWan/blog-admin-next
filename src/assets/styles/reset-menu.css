@@ -1,7 +1,7 @@
 /* 重置ant-design菜单组件在收缩模式下的子菜单样式 */
 .ant-menu-light {
   color: var(--st-c-text-1);
-  background: none;
+  background: var(--st-c-bg);
 }
 
 .ant-menu-light.ant-menu-submenu > .ant-menu {
