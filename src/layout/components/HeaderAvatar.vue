@@ -7,12 +7,13 @@ import { useRouter } from 'vue-router'
 const userStore = useUserStore()
 const router = useRouter()
 const logout = () => {
-  userStore.logout()
-  router.push({
-    path: '/login',
-    query: {
-      redirect: router.currentRoute.value.fullPath
-    }
+  userStore.logout().then(() => {
+    router.push({
+      path: '/login',
+      query: {
+        redirect: router.currentRoute.value.fullPath
+      }
+    })
   })
 }
 </script>

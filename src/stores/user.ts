@@ -1,6 +1,6 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { getStorage, setStorage, removeStorage } from "web-storage-plus";
+import { getStorage, setStorage, removeStorage } from 'web-storage-plus'
 
 export const useUserStore = defineStore('user', () => {
   const token = ref('')
@@ -16,7 +16,7 @@ export const useUserStore = defineStore('user', () => {
     removeStorage('token')
   }
 
-  function login(data: {username: string; password: string; code: string;}) {
+  function login(data: { username: string; password: string; code: string }) {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         console.log(data)
@@ -27,7 +27,12 @@ export const useUserStore = defineStore('user', () => {
     })
   }
   function logout() {
-    removeToken()
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        removeToken()
+        resolve()
+      }, 100)
+    })
   }
 
   return {
