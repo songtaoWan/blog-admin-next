@@ -33,6 +33,7 @@ import ScrollBar from './components/ScrollBar.vue'
 
   .layout-main {
     overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -46,36 +47,47 @@ import ScrollBar from './components/ScrollBar.vue'
   持续时间和速度曲线。
 */
 .slide-fade-enter-active {
-  animation: slide-in-elliptic-right-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: bounce-in-right 0.5s both;
+}
+
+@keyframes bounce-in-right {
+  0% {
+    transform: translateX(300px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  72% {
+    transform: translateX(48px);
+    animation-timing-function: ease-in;
+  }
+  81% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  85% {
+    transform: translateX(22px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
 }
 
 .slide-fade-leave-active {
-  animation: slide-out-elliptic-left-bck 0.7s ease-in both;
-}
-
-@keyframes slide-out-elliptic-left-bck {
-  0% {
-    transform: translateX(0) rotateY(0) scale(1);
-    transform-origin: 2000px 50%;
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-1000px) rotateY(30deg) scale(0);
-    transform-origin: -100% 50%;
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-elliptic-right-fwd {
-  0% {
-    transform: translateX(800px) rotateY(-30deg) scale(0);
-    transform-origin: -100% 50%;
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0) rotateY(0) scale(1);
-    transform-origin: -1800px 50%;
-    opacity: 1;
-  }
+  display: none;
 }
 </style>
