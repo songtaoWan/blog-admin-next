@@ -139,6 +139,8 @@ const version = __APP_VERSION__;
   }
 
   .version {
+    height: 32px;
+    line-height: 32px;
     text-align: center;
     font-size: 12px;
   }
@@ -146,10 +148,14 @@ const version = __APP_VERSION__;
 
 .w-80 {
   width: 80px;
+
+  .version {
+    display: none;
+  }
 }
 
 :deep(.ant-menu) {
-  height: calc(100% - 34px);
+  height: calc(100% - 32px);
   transition: var(--st-t-bg), width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
