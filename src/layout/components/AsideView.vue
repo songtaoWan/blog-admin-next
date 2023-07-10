@@ -108,6 +108,8 @@ watch(
   },
   { immediate: true }
 )
+
+const version = __APP_VERSION__;
 </script>
 
 <template>
@@ -120,6 +122,7 @@ watch(
       :items="items"
       @click="onChangeRoute"
     ></a-menu>
+    <div class="version">{{version}}</div>
   </aside>
 </template>
 
@@ -134,6 +137,11 @@ watch(
   &::-webkit-scrollbar {
     display: none;
   }
+
+  .version {
+    text-align: center;
+    font-size: 12px;
+  }
 }
 
 .w-80 {
@@ -141,7 +149,7 @@ watch(
 }
 
 :deep(.ant-menu) {
-  height: 100%;
+  height: calc(100% - 34px);
   transition: var(--st-t-bg), width 0.5s cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
