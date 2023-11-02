@@ -96,3 +96,32 @@ export const debounce = <T = unknown>(
     }, delay)
   }
 }
+
+/**
+ * 获取系统明暗模式
+ * @param autoFollow 自动跟随系统明暗模式
+ * @returns 
+ */
+export const getSystemTheme = (autoFollow?: (mode: 'dark' | 'light') => void) => {
+  try {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    const theme = systemTheme.matches ? 'dark' : 'light'
+
+    if (autoFollow) {
+      systemTheme.addEventListener('change', (e) => {
+        const theme = e.matches ? 'dark' : 'light'
+        autoFollow(theme)
+      })
+    }
+    return theme
+  } catch (error) {
+    console.log(error)
+
+    const hours = new Date().getHours()
+    if (hours > 6 && hours < 19) {
+      return 'light'
+    }
+
+    return 'dark'
+  }
+}
