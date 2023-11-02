@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import IconSun from '../icons/IconSun.vue'
 import IconMoon from '../icons/IconMoon.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { throttle } from '@/utils/index'
 
 defineOptions({
@@ -19,12 +19,19 @@ const $emit = defineEmits<{
 }>()
 
 const status = ref($props.checked)
+watch(
+  () => $props.checked,
+  (val) => {
+    if (val === status.value) return
+    status.value = val
+  }
+)
+
 const changeStatus = () => {
   status.value = !status.value
   $emit('onChange', status.value)
   $emit('update:status', status.value)
 }
-
 const handleChangeStatus = $props.delay ? throttle(changeStatus, $props.delay) : changeStatus
 </script>
 
