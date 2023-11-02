@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import ButtonCollapsed from '@/components/ButtonCollapsed/ButtonCollapsed.vue';
 import ScreenFull from '@/components/ScreenFull/ScreenFull.vue';
-import SwitchAppearance from '@/components/SwitchAppearance/SwitchAppearance.vue';
 import HeaderAvatar from './HeaderAvatar.vue';
 import BreadCrumb from './BreadCrumb.vue';
+import SwitchTheme from './SwitchTheme.vue';
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import BreadCrumb from './BreadCrumb.vue';
     </div>
     <div class="flex">
       <ScreenFull />
-      <SwitchAppearance />
+      <SwitchTheme />
       <HeaderAvatar />
     </div>
   </header>
