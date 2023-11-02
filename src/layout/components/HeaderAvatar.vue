@@ -40,7 +40,7 @@ const handlePersonalPage = () => {
     <template #overlay>
       <a-menu>
         <a-menu-item>
-          <a href="javascript:;">代码仓库</a>
+          <a href="https://github.com/wansongtao/blog-admin-next" target="_blank">代码仓库</a>
         </a-menu-item>
         <a-menu-item>
           <a href="javascript:;" @click="handlePersonalPage">个人中心</a>
