@@ -1,30 +1,48 @@
 <script lang="ts" setup>
 import IconSun from '../icons/IconSun.vue'
 import IconMoon from '../icons/IconMoon.vue'
-import { useSettingStore } from '@/stores/setting'
-import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+import { throttle } from '@/utils/index'
 
-const setStore = useSettingStore()
-const { toggleTheme } = setStore
-const { theme } = storeToRefs(setStore)
+defineOptions({
+  name: 'BaseSwitch'
+})
+
+const $props = withDefaults(defineProps<{ checked?: boolean; delay?: number }>(), {
+  checked: false,
+  delay: 0
+})
+
+const $emit = defineEmits<{
+  onChange: [status: boolean]
+  'update:status': [status: boolean]
+}>()
+
+const status = ref($props.checked)
+const changeStatus = () => {
+  status.value = !status.value
+  $emit('onChange', status.value)
+  $emit('update:status', status.value)
+}
+
+const handleChangeStatus = $props.delay ? throttle(changeStatus, $props.delay) : changeStatus
 </script>
 
 <template>
-  <button class="switch-appearence" @click="toggleTheme">
-    <span
-      class="switch-check"
-      :class="theme === 'dark' ? 'switch-check--active' : ''"
-    >
+  <button class="base-switch" @click="handleChangeStatus">
+    <span class="switch-check" :class="status ? 'switch-check--active' : ''">
       <span class="switch-icon">
-        <IconSun v-show="theme === 'light'" />
-        <IconMoon v-show="theme === 'dark'" />
+        <slot :status="status">
+          <IconSun v-show="!status" />
+          <IconMoon v-show="status" />
+        </slot>
       </span>
     </span>
   </button>
 </template>
 
 <style lang="scss" scoped>
-.switch-appearence {
+.base-switch {
   position: relative;
   border-radius: 11px;
   display: block;
