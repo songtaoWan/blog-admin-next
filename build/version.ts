@@ -5,7 +5,7 @@ import { exec, which, echo } from 'shelljs'
  * @param {string} v version
  * @returns {boolean}
  */
-const isLatestVersion = (v: string) => {
+const isLatestVersion = (v: string): boolean => {
   if (typeof v !== 'string' || !v) {
     console.warn('parameter error')
     return false
