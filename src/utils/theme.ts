@@ -11,7 +11,7 @@ export const setTheme = (theme: ITheme) => {
 }
 
 export const getTheme = () => {
-  return getStorage<ITheme>(key) || defaultTheme
+  return getStorage<ITheme>(key) as ITheme || defaultTheme
 }
 
 export const initTheme = () => {
