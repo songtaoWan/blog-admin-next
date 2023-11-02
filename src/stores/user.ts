@@ -16,6 +16,11 @@ export const useUserStore = defineStore('user', () => {
     removeStorage('token')
   }
 
+  const userInfo = ref({
+    name: '阿Q强国',
+    avatar: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
+  })
+
   function login(data: { username: string; password: string; code: string }) {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
@@ -40,6 +45,7 @@ export const useUserStore = defineStore('user', () => {
     getToken,
     setToken,
     removeToken,
+    userInfo,
     login,
     logout
   }

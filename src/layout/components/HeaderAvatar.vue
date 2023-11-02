@@ -1,10 +1,13 @@
 <script lang="ts" setup>
 import { Dropdown as ADropdown, Menu as AMenu, MenuItem as AMenuItem } from 'ant-design-vue'
 import { DownOutlined } from '@ant-design/icons-vue'
+import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
+const { userInfo } = storeToRefs(userStore)
+
 const router = useRouter()
 const logout = () => {
   userStore.logout().then(() => {
@@ -28,13 +31,9 @@ const handlePersonalPage = () => {
   <a-dropdown placement="bottom" arrow>
     <div class="px-5 flex items-center">
       <div>
-        <img
-          src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-          alt=""
-          class="avatar"
-        />
+        <img :src="userInfo.avatar" alt="" class="avatar" />
       </div>
-      <div class="name">阿Q强国</div>
+      <div class="name">{{ userInfo.name }}</div>
       <DownOutlined :style="{ fontSize: '14px', color: 'var(--st-c-icon)' }" />
     </div>
     <template #overlay>
