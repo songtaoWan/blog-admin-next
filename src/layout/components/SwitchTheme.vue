@@ -7,7 +7,7 @@ const { toggleTheme, theme } = setStore  // theme 不需要保持响应式
 </script>
 
 <template>
-  <BaseSwitch :status="theme === 'dark'" :delay="300" @onChange="toggleTheme" />
+  <BaseSwitch :checked="theme === 'dark'" :delay="300" @onChange="toggleTheme" />
 </template>
 
 <style lang="scss" scoped></style>
