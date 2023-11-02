@@ -16,6 +16,12 @@ const logout = () => {
     })
   })
 }
+
+const handlePersonalPage = () => {
+  router.push({
+    path: '/userinfo'
+  })
+}
 </script>
 
 <template>
@@ -37,7 +43,7 @@ const logout = () => {
           <a href="javascript:;">代码仓库</a>
         </a-menu-item>
         <a-menu-item>
-          <a href="javascript:;">个人中心</a>
+          <a href="javascript:;" @click="handlePersonalPage">个人中心</a>
         </a-menu-item>
         <a-menu-item>
           <a href="javascript:;" @click="logout">退出登录</a>
