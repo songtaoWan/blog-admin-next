@@ -42,52 +42,63 @@ import ScrollBar from './components/ScrollBar.vue'
   }
 }
 
-/*
-  进入和离开动画可以使用不同
-  持续时间和速度曲线。
-*/
 .slide-fade-enter-active {
-  animation: bounce-in-right 0.5s both;
-}
-
-@keyframes bounce-in-right {
-  0% {
-    transform: translateX(300px);
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  60% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  72% {
-    transform: translateX(48px);
-    animation-timing-function: ease-in;
-  }
-  81% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-  }
-  85% {
-    transform: translateX(22px);
-    animation-timing-function: ease-in;
-  }
-  90% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-  }
-  95% {
-    transform: translateX(8px);
-    animation-timing-function: ease-in;
-  }
-  100% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-  }
+  animation: slide-fade 0.3s both;
 }
 
 .slide-fade-leave-active {
   display: none;
 }
+
+@keyframes slide-fade {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// .slide-fade-enter-active {
+//   animation: bounce-in-right 0.5s both;
+// }
+
+// @keyframes bounce-in-right {
+//   0% {
+//     transform: translateX(100px);
+//     animation-timing-function: ease-in;
+//     opacity: 0;
+//   }
+//   60% {
+//     transform: translateX(0);
+//     animation-timing-function: ease-out;
+//     opacity: 1;
+//   }
+//   72% {
+//     transform: translateX(48px);
+//     animation-timing-function: ease-in;
+//   }
+//   81% {
+//     transform: translateX(0);
+//     animation-timing-function: ease-out;
+//   }
+//   85% {
+//     transform: translateX(22px);
+//     animation-timing-function: ease-in;
+//   }
+//   90% {
+//     transform: translateX(0);
+//     animation-timing-function: ease-out;
+//   }
+//   95% {
+//     transform: translateX(8px);
+//     animation-timing-function: ease-in;
+//   }
+//   100% {
+//     transform: translateX(0);
+//     animation-timing-function: ease-out;
+//   }
+// }
 </style>
