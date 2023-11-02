@@ -38,7 +38,7 @@ export const adminRoute = {
       },
       children: [
         {
-          path: 'list',
+          path: '',
           name: 'ArticleList',
           component: () => import('@/views/article/list/ArticleList.vue'),
           meta: {
