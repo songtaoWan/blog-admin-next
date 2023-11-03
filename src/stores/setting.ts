@@ -1,21 +1,23 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { getTheme, setTheme } from '@/utils/theme'
+import { getSystemTheme } from '@/utils/index'
 
 export const useSettingStore = defineStore('setting', () => {
-  /**
-   * 网站主题
-   */
   const theme = ref(getTheme())
+
+  function followSystemTheme() {
+    theme.value = getSystemTheme((mode) => {
+      theme.value = mode
+      setTheme(mode)
+    })
+    setTheme(theme.value)
+  }
   function toggleTheme() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
-
     setTheme(theme.value)
   }
 
-  /**
-   * 侧边栏是否折叠
-   */
   const collapsed = ref(false)
   function toggleCollapsed() {
     collapsed.value = !collapsed.value
@@ -23,6 +25,7 @@ export const useSettingStore = defineStore('setting', () => {
 
   return {
     theme,
+    followSystemTheme,
     toggleTheme,
     collapsed,
     toggleCollapsed

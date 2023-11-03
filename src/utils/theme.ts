@@ -1,12 +1,12 @@
 import type { ITheme } from '@/types/index'
 import { getStorage, setStorage } from 'web-storage-plus'
-import { getSystemTheme } from './index'
 import { defaultTheme } from '@/config/index'
 
 const key = 'theme'
 
 export const setTheme = (theme: ITheme) => {
-  document.body.className = theme
+  document.body.classList.remove('light', 'dark')
+  document.body.classList.add(theme)
 
   setStorage(key, theme)
 }
@@ -16,9 +16,6 @@ export const getTheme = () => {
 }
 
 export const initTheme = () => {
-  const theme = getSystemTheme((mode) => {
-    setTheme(mode)
-  })
-
+  const theme = getTheme()
   setTheme(theme)
 }
