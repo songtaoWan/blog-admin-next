@@ -103,18 +103,7 @@ export const debounce = <T = unknown>(
  * @returns
  */
 export const getSystemTheme = (autoFollow?: (mode: 'dark' | 'light') => void) => {
-  try {
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-    const theme = systemTheme.matches ? 'dark' : 'light'
-
-    if (autoFollow) {
-      systemTheme.addEventListener('change', (e) => {
-        const theme = e.matches ? 'dark' : 'light'
-        autoFollow(theme)
-      })
-    }
-    return theme
-  } catch (error) {
+  if (!window.matchMedia) {
     const date = new Date()
     const hours = date.getHours()
 
@@ -147,4 +136,15 @@ export const getSystemTheme = (autoFollow?: (mode: 'dark' | 'light') => void) =>
 
     return 'dark'
   }
+
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+  const theme = systemTheme.matches ? 'dark' : 'light'
+
+  if (autoFollow) {
+    systemTheme.addEventListener('change', (e) => {
+      const theme = e.matches ? 'dark' : 'light'
+      autoFollow(theme)
+    })
+  }
+  return theme
 }
