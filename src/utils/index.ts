@@ -99,8 +99,8 @@ export const debounce = <T = unknown>(
 
 /**
  * 获取系统明暗模式
- * @param autoFollow 自动跟随系统明暗模式
- * @returns 
+ * @param autoFollow 自动跟随系统明暗模式回调
+ * @returns
  */
 export const getSystemTheme = (autoFollow?: (mode: 'dark' | 'light') => void) => {
   try {
@@ -115,10 +115,33 @@ export const getSystemTheme = (autoFollow?: (mode: 'dark' | 'light') => void) =>
     }
     return theme
   } catch (error) {
-    console.log(error)
+    const date = new Date()
+    const hours = date.getHours()
 
-    const hours = new Date().getHours()
-    if (hours > 6 && hours < 19) {
+    if (autoFollow) {
+      const time = date.getTime()
+      let delay = 0
+      let mode: 'light' | 'dark' = 'light'
+
+      if (hours >= 0 && hours < 6) {
+        const lastTime = date.setHours(6)
+        delay = lastTime - time
+      } else if (hours >= 6 && hours < 19) {
+        const lastTime = date.setHours(19)
+        delay = lastTime - time
+        mode = 'dark'
+      } else {
+        const lastTime = date.setHours(23, 59, 59, 999) + 6 * 60 * 60 * 1000
+        delay = lastTime - time
+      }
+
+      setTimeout(() => {
+        autoFollow(mode)
+        getSystemTheme(autoFollow)
+      }, delay)
+    }
+
+    if (hours >= 6 && hours < 19) {
       return 'light'
     }
 
