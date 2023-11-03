@@ -68,7 +68,7 @@ const login = () => {
   <div class="login">
     <div class="login_left">
       <div class="login_left_head">
-        <div class="login_left_title">博客后台管理系统</div>
+        <div class="login_left_title">博客管理系统</div>
         <div class="login_left_desc">
           时间吞噬一切，记忆将之重组还原。那些旧日的好时光，让一切往事都值得回忆，也让未来的一切都值得期待。
         </div>
@@ -147,6 +147,7 @@ const login = () => {
       position: absolute;
       top: 0;
       right: -100px;
+      background-color: #fff;
     }
   }
 
@@ -180,6 +181,7 @@ const login = () => {
   text-align: center;
   font-size: 24px;
   font-weight: 600;
+  color: #213547;
 }
 
 .code {
@@ -188,5 +190,40 @@ const login = () => {
 
 :deep(.ant-btn-primary) {
   background-color: #1677ff;
+}
+
+.login_right_wrap {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 5px solid;
+    animation: clippath 4s infinite linear;
+  }
+}
+
+@keyframes clippath {
+  0%,
+  100% {
+    clip-path: inset(0 99% 0 0);
+    border-image: linear-gradient(to left, #feb692 10%, #ea5455 100%) 1;
+  }
+  25% {
+    clip-path: inset(0 0 99% 0);
+    border-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%) 1;
+  }
+  50% {
+    clip-path: inset(0 0 0 99%);
+    border-image: linear-gradient(135deg, #5efce8 10%, #736efe 100%) 1;
+  }
+  75% {
+    clip-path: inset(99% 0 0 0);
+    border-image: linear-gradient(to left, #fdeb71 10%, #f8d800 100%) 1;
+  }
 }
 </style>
