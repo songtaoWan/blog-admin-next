@@ -14,8 +14,8 @@ const $props = withDefaults(defineProps<{ checked?: boolean; delay?: number }>()
 })
 
 const $emit = defineEmits<{
-  onChange: [status: boolean]
-  'update:status': [status: boolean]
+  onChange: [isChecked: boolean]
+  'update:checked': [isChecked: boolean]
 }>()
 
 const status = ref($props.checked)
@@ -30,7 +30,7 @@ watch(
 const changeStatus = () => {
   status.value = !status.value
   $emit('onChange', status.value)
-  $emit('update:status', status.value)
+  $emit('update:checked', status.value)
 }
 const handleChangeStatus = $props.delay ? throttle(changeStatus, $props.delay) : changeStatus
 </script>
